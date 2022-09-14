@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function Sumar()
+        {
+            // Declaracion de variables
+            var nro1, nro2, resultado;
+            // Leer el noro 1 y nro2
+            nro1 = document.getElementById("txtNro1").value;
+            nro2 = document.getElementById("txtNro2").value;
+            // Sumar
+            resultado = parseFloat(nro1) + parseFloat(nro2);
+            // Escribir suma
+            document.getElementById("lblResultado").innerHTML = resultado;
+        }
+        function Restar()
+        {
+            // Declaracion de variables
+            var nro1, nro2, resultado;
+            // Leer el noro 1 y nro2
+            nro1 = document.getElementById("txtNro1").value;
+            nro2 = document.getElementById("txtNro2").value;
+            // Restar
+            resultado = parseFloat(nro1) - parseFloat(nro2);
+            // Escribir Resta
+            document.getElementById("lblResultado").innerHTML = resultado;
+        }
+        function Factorial()
+        {
+            var fact = 1, nro;
+            nro = document.getElementById("txtNro1").value;
+            for(i = 1; i <= nro; i++)
+            {
+                fact = fact * i;
+            }
+            document.getElementById("lblResultado").innerHTML = fact;
+        }
+
+        function pot(base, exp)
+        {
+            if(exp == 0) return 1;
+            else return base * pot(base, exp-1);
+        }
+
+        function Potencia()
+        {
+            // Declaracion de variables
+            var nro1, nro2, resultado;
+            // Leer el noro 1 y nro2
+            nro1 = document.getElementById("txtNro1").value;
+            nro2 = document.getElementById("txtNro2").value;
+            // Restar
+            resultado = pot(nro1,nro2);
+            // Escribir Resta
+            document.getElementById("lblResultado").innerHTML = resultado;
+        }
+    </script>
+</head>
+<body>
+    <!--Formularios en Java Script-->
+    <h3>Operaciones aritmeticas</h3>
+    <input type="text" id="txtNro1"> <br>
+    <input type="text" id="txtNro2"> <br><br>
+    <button type="button" onclick="Sumar()">Sumar</button>
+    <button type="button" onclick="Restar()">Restar</button>
+    <button type="button">Multiplicar</button>
+    <button type="button">Dividir</button>
+    <button type="button" onclick="Factorial()">Factorial</button>  
+    <button type="button" onclick="Potencia()">Potencia</button>
+    <p id="lblResultado" ></p>
+</body>
+</html>
